@@ -1,1 +1,18 @@
-<h1>Portfolio Page</h1>
+<div class="row">
+<div *ngFor="let repo of repos">
+
+	<div class="col-md-6">
+		<div class="card" style="width: 20rem;">
+	  		<div class="card-body">
+	    		<h5 class="card-title">{{repo.name}}</h5>
+	    		<p class="card-text">{{repo.description}}</p>
+	    		<div class="row">
+	    			<div class="col-md-6"><a href="{{repo.html_url}}" class="btn btn-primary">GitHub Repo</a> </div>
+	    			<div *ngIf="repo.has_pages"><a href="https://{{repo.owner.login}}.github.io/{{repo.name}}/" class="btn btn-primary">Live Demo</a></div>
+	    		</div>
+	  		</div>
+		</div>
+	</div>
+	
+</div>
+</div>
